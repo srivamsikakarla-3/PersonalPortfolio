@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkata Sri Vamsi Kakarla | Portfolio</title>
+  <meta name="description" content="Professional portfolio of Venkata Sri Vamsi Kakarla - Business Analyst, Sales Operations Specialist, Salesforce, Power BI, Revenue Analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050b18;
+      --bg-2: #08162d;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f5f8ff;
+      --muted: #b9c8df;
+      --blue: #2f80ed;
+      --blue-light: #68b5ff;
+      --border: rgba(255, 255, 255, 0.14);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47, 128, 237, 0.25), transparent 35%),
+        radial-gradient(circle at top right, rgba(104, 181, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, var(--bg), #020612 80%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 11, 24, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .logo span { color: var(--blue-light); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--blue-light); }
+
+    .hero {
+      padding: 96px 0 72px;
+      min-height: 88vh;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--blue-light);
+      background: rgba(47, 128, 237, 0.12);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      color: var(--blue-light);
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: white;
+      border: none;
+      box-shadow: 0 12px 35px rgba(47, 128, 237, 0.35);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .profile-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--card-strong), rgba(255, 255, 255, 0.04));
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-placeholder {
+      height: 360px;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(47, 128, 237, 0.28), rgba(104, 181, 255, 0.12)),
+        url('assets/profile.jpg') center/cover no-repeat;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: end;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .profile-note {
+      width: 100%;
+      padding: 14px;
+      background: rgba(5, 11, 24, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-title {
+      margin-bottom: 34px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.06em;
+    }
+
+    .section-title p { color: var(--muted); max-width: 560px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 12px;
+      color: var(--blue-light);
+    }
+
+    .card p, .card li { color: var(--muted); }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .metric {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(47, 128, 237, 0.12);
+      border: 1px solid rgba(104, 181, 255, 0.22);
+    }
+
+    .metric strong { display: block; font-size: 1.8rem; color: #fff; }
+    .metric span { color: var(--muted); font-size: 0.88rem; }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timeline { display: grid; gap: 22px; }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .role-head h3 { color: #fff; font-size: 1.35rem; }
+    .role-head span { color: var(--blue-light); font-weight: 700; }
+
+    ul { padding-left: 18px; display: grid; gap: 10px; }
+
+    .banner {
+      min-height: 260px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(90deg, rgba(5, 11, 24, 0.9), rgba(5, 11, 24, 0.3)),
+        url('assets/banner.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #07152c, #0c2d5d);
+      padding: 32px;
+      display: flex;
+      align-items: end;
+      box-shadow: var(--shadow);
+    }
+
+    .banner h2 { font-size: clamp(2rem, 4vw, 3rem); max-width: 780px; letter-spacing: -0.06em; }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .grid-3, .metric-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 64px; }
+      .profile-placeholder { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home">Sri Vamsi<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Executive Analytics Portfolio</div>
+          <h1>Venkata Sri Vamsi Kakarla</h1>
+          <h2>Forecasting Business Growth Through Data</h2>
+          <p>Business Analyst and Sales Operations Specialist focused on revenue analytics, Salesforce CRM, Power BI dashboards, forecasting models, pipeline governance, and executive business reviews.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="assets/Srivamsi-Kakarla-Resume.pdf" target="_blank">View Resume</a>
+            <a class="btn" href="https://www.linkedin.com/in/srivamsikakarla/" target="_blank">LinkedIn</a>
+            <a class="btn" href="https://github.com/srivamsikakarla" target="_blank">GitHub</a>
+            <a class="btn" href="mailto:srivamsikakarla1@gmail.com">Contact Me</a>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-placeholder">
+            <div class="profile-note">Add your LinkedIn profile image as <strong>assets/profile.jpg</strong>. Add your LinkedIn banner as <strong>assets/banner.jpg</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p>I turn sales data, pipeline movement, and CRM insights into leadership-ready decisions.</p>
+        </div>
+        <div class="card">
+          <p>Results-driven Business Analyst and Sales Operations Specialist with 6+ years of experience delivering data-driven sales analytics, CRM configurations, forecasting models, pipeline management, and executive reporting solutions for global enterprise organizations. Proven expertise in Salesforce CRM, revenue analytics, funnel conversion analysis, workflow automation, and Power BI reporting to support Weekly Business Reviews, forecast cadence, and strategic decisions across worldwide sales organizations.</p>
+          <div class="metric-row">
+            <div class="metric"><strong>6+</strong><span>Years Experience</span></div>
+            <div class="metric"><strong>$200M+</strong><span>Quarterly Pipeline Reviews</span></div>
+            <div class="metric"><strong>99%</strong><span>Data Accuracy</span></div>
+            <div class="metric"><strong>80%</strong><span>Forecast Accuracy Target</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Tools and capabilities across analytics, CRM, reporting, cloud, and delivery.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>Business Intelligence</h3><div class="skill-tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Advanced Excel</span><span class="tag">Executive Dashboards</span></div></div>
+          <div class="card"><h3>CRM & Data Platforms</h3><div class="skill-tags"><span class="tag">Salesforce CRM</span><span class="tag">SFDC Admin</span><span class="tag">Microsoft Dynamics</span><span class="tag">Power Automate</span></div></div>
+          <div class="card"><h3>Programming</h3><div class="skill-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">C#</span><span class="tag">Java</span><span class="tag">JSON</span><span class="tag">APIs</span></div></div>
+          <div class="card"><h3>Sales Analytics</h3><div class="skill-tags"><span class="tag">Sales Forecasting</span><span class="tag">Pipeline Analysis</span><span class="tag">Funnel Conversion</span><span class="tag">Quota Attainment</span></div></div>
+          <div class="card"><h3>Business Performance</h3><div class="skill-tags"><span class="tag">KPI Metrics</span><span class="tag">Top Deals Tracking</span><span class="tag">WBR Reporting</span><span class="tag">QBR Reporting</span></div></div>
+          <div class="card"><h3>Cloud & Delivery</h3><div class="skill-tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">Agile</span><span class="tag">JIRA</span><span class="tag">Confluence</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experience</h2>
+          <p>Sales analytics, forecasting, CRM reporting, and executive insight delivery.</p>
+        </div>
+        <div class="timeline">
+          <div class="card">
+            <div class="role-head">
+              <div><h3>K-Force | Client: Hewlett-Packard</h3><p>Business Analyst · Global Software Sales Performance & Analytics</p></div>
+              <span>Sep 2024 – Present</span>
+            </div>
+            <ul>
+              <li>Developed forecasting and pipeline analytics models using Salesforce, Excel, and Power BI, improving forecast visibility and planning accuracy by 15%.</li>
+              <li>Owned reporting frameworks for revenue tracking, funnel conversion, quota attainment, and sales productivity supporting $200M+ quarterly pipeline reviews.</li>
+              <li>Supported WBR, forecast cadence, pipeline governance, and Top Deals reviews with executive dashboards, KPI insights, and business narratives.</li>
+              <li>Built multi-year conversion rate models using historical funnel and closed-won data, improving forecast accuracy from 48% to nearly 80%.</li>
+              <li>Led HP Dynamics to Salesforce migration, dashboard modernization, and Power BI integration, achieving 99% data accuracy and reducing reporting turnaround by 30%.</li>
+              <li>Developed SOPs and governance frameworks that reduced onboarding effort by 20% and improved reporting consistency across regional sales operations.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="role-head">
+              <div><h3>Accenture Solutions Pvt Ltd | Client: Heineken</h3><p>Senior Analyst · Enterprise Analytics & CRM Reporting</p></div>
+              <span>Mar 2018 – Aug 2022</span>
+            </div>
+            <ul>
+              <li>Delivered enterprise analytics and CRM reporting solutions across multiple regions for global FMCG operations.</li>
+              <li>Designed executive dashboards and KPI frameworks using Excel, SQL, and BI tools, improving reporting efficiency by 25%.</li>
+              <li>Built automated reporting workflows and CRM reporting structures, reducing manual reporting effort by 30%.</li>
+              <li>Led UAT, stakeholder onboarding, and training initiatives, improving user engagement by 20%.</li>
+              <li>Delivered WBR-style insights and data-driven recommendations to senior leadership and global stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-title"><h2>Certifications</h2><p>Professional learning across CRM, SQL, and AI productivity.</p></div>
+        <div class="grid-3">
+          <div class="card"><h3>Salesforce Certified Administrator</h3><p>CRM configuration, reporting, dashboards, user setup, workflows, and platform administration.</p></div>
+          <div class="card"><h3>Prompt Engineering for ChatGPT</h3><p>Applied AI prompting for productivity, documentation, analysis, and business communication.</p></div>
+          <div class="card"><h3>SQL Developer</h3><p>Querying, joins, data extraction, reporting logic, and analytics support.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-title"><h2>Education</h2><p>Academic foundation in data science, analytics, and computer science.</p></div>
+        <div class="grid-2">
+          <div class="card"><h3>University of North Texas</h3><p>Master of Science in Data Science · GPA: 3.9</p><p>Aug 2022 – May 2024</p></div>
+          <div class="card"><h3>GITAM University</h3><p>Bachelor of Technology in Computer Science · GPA: 3.0</p><p>July 2013 – Apr 2017</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-title"><h2>Achievements</h2><p>Recognition for delivery, process improvement, and leadership.</p></div>
+        <div class="grid-3">
+          <div class="card"><h3>Growth Catalyst Award</h3><p>Awarded by Accenture for driving process improvements.</p></div>
+          <div class="card"><h3>Pinnacle High-Performance Award</h3><p>Recognized by Accenture for exceptional client delivery.</p></div>
+          <div class="card"><h3>K-Force Best Employee FY25 Nomination</h3><p>Nominated for leadership in analytics workstreams.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="banner">
+          <h2>Building revenue intelligence through forecasting, pipeline analytics, and executive-ready business insights.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title"><h2>Contact</h2><p>Connect with me for business analytics, Salesforce, Power BI, forecasting, and revenue operations opportunities.</p></div>
+        <div class="card">
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:srivamsikakarla1@gmail.com">Email Me</a>
+            <a class="btn" href="https://www.linkedin.com/in/srivamsikakarla/" target="_blank">LinkedIn</a>
+            <a class="btn" href="https://github.com/srivamsikakarla" target="_blank">GitHub</a>
+            <a class="btn" href="assets/Srivamsi-Kakarla-Resume.pdf" target="_blank">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Venkata Sri Vamsi Kakarla. Built for GitHub Pages.</div>
+  </footer>
+</body>
+</html>
